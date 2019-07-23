@@ -1,0 +1,7 @@
+app:
+  services:
+    student-service:
+      path: https://vedanta-student-service.herokuapp.com
+      uris:
+        QUERY_ALL_STUDENT_DATA: /api/query-student/details/students
+        QUERY_A_STUDENT_DATA: /api/query-student/details/students

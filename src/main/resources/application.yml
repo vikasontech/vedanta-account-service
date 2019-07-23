@@ -1,0 +1,28 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: vedanta-account-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/account-db?reconnect=true
+    username: root
+    password:
+    hikari:
+      maximumPoolSize: 3
+
+  redis:
+    host: localhost
+    port: 6379
+
+  flyway:
+    locations: classpath:db/migration
+    baselineOnMigrate: true
+
+app:
+  services:
+    student-service:
+      path: http://localhost:8082
+      uris:
+        QUERY_ALL_STUDENT_DATA: /api/query-student/details/students
+        QUERY_A_STUDENT_DATA: /api/query-student/details/students
+
